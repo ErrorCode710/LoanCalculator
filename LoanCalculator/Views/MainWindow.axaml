@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:LoanCalculator.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LoanCalculator.Views.MainWindow"
+		xmlns:views="using:LoanCalculator.Views"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="LoanCalculator">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+	<Grid>
+	<Grid  RowDefinitions="auto,auto">
+		
+	    <Grid Height="40" Width="700" Grid.Row="0" ColumnDefinitions="*,auto"  >
+			<TextBlock  Grid.Column="0" FontFamily="{StaticResource SfProB}" Margin="0,10,0,0" FontSize="21">Car Deals</TextBlock>
+			<TextBlock  Grid.Column="1" FontFamily="{StaticResource SfProBR}" Margin="0,10,0,0" FontSize="14">Promo</TextBlock>
+			
+			
+		</Grid>
+		
+		<Grid  Grid.Row="1" RowDefinitions="auto,auto, auto">
+			<Border Grid.Row="0" Height="1" Background="#e1e1e1"></Border>
+			<TextBlock Grid.Row="1"  Grid.Column="1" FontFamily="{StaticResource SfProB}" FontSize="30" Margin="0,30,0,0" HorizontalAlignment="Center" > Featured Deals</TextBlock>
+
+
+			<Grid  ColumnDefinitions="auto,auto,auto" Grid.Row="2" HorizontalAlignment="Center">
+				<views:CardCardsView/>
+				
+			</Grid>
+		</Grid>
+	</Grid>
+	
+		
+	</Grid>
+	
+</Window>

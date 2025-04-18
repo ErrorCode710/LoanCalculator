@@ -1,0 +1,21 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="LoanCalculator.App"
+             xmlns:local="using:LoanCalculator"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+	
+	<Application.Resources>
+		<FontFamily x:Key="SfProDR">avares://LoanCalculator/Assets/Fonts/SF-Pro-Display-Regular.ttf#SF Pro Display</FontFamily>
+		<FontFamily x:Key="SfProR">avares://LoanCalculator/Assets/Fonts/SF-Pro-Text-Regular.ttf#SF Pro Display</FontFamily>
+		<FontFamily x:Key="SfProB">avares://LoanCalculator/Assets/Fonts/SF-Pro-Display-Bold.ttf#SF Pro Display</FontFamily>
+	</Application.Resources>
+	
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+</Application>
