@@ -29,29 +29,54 @@
 			<Border Grid.Row="0" Height="1" Background="#e1e1e1"></Border>
 			<TextBlock Grid.Row="1"  Grid.Column="1" FontFamily="{StaticResource SfProB}" FontSize="30" Margin="0,30,0,0" HorizontalAlignment="Center" > Featured Deals</TextBlock>
 
-
-			<Grid  ColumnDefinitions="auto,auto,auto" Grid.Row="2" HorizontalAlignment="Center">
-				<views:CardCardsView
-						CardImageSource="avares://LoanCalculator/Assets/Images/SubaroR.png"
-                           CardTitle="Subaru BRZ"
-                           CardPrice="₱2,500,000" 
+			
+				<Grid  ColumnDefinitions="auto,auto,auto,auto,auto" Grid.Row="2" HorizontalAlignment="Center">
+					<Path Data="{StaticResource chevron_up_regular}"
+					  Fill="Black"
+					  Width="24"
+					  Height="24"
+					  Stretch="Uniform"
+					Grid.Column="0"
+						  >
+						<Path.RenderTransform>
+							<RotateTransform Angle="270" CenterX="-10" CenterY="5" />
+						</Path.RenderTransform>
+					</Path>
+					<Path Data="{StaticResource chevron_up_regular}"
+					  Fill="Black"
+					  Width="24"
+					  Height="24"
+					  Stretch="Uniform"
+					Grid.Column="4"
+						  >
+						<Path.RenderTransform>
+							<RotateTransform Angle="90" />
+						</Path.RenderTransform>
+					</Path>
+					<views:CardCardsView
+							Grid.Column="1"
+							CardImageSource="avares://LoanCalculator/Assets/Images/SubaroR.png"
+							   CardTitle="Subaru BRZ"
+							   CardPrice="₱2,500,000"
                          
 							  />
-				<views:CardCardsView
-					Grid.Column="1"
-						CardImageSource="avares://LoanCalculator/Assets/Images/Mustang.webp"
-                           CardTitle="Ford Mustang"
-                           CardPrice="₱3,999,000"
-                         
-							  />
-				<views:CardCardsView
+					<views:CardCardsView
 						Grid.Column="2"
-						CardImageSource="avares://LoanCalculator/Assets/Images/Civic.png"
-                           CardTitle="Honda Civic Type R"
-                           CardPrice="₱3,870,000"
+							CardImageSource="avares://LoanCalculator/Assets/Images/Mustang.webp"
+							   CardTitle="Ford Mustang"
+							   CardPrice="₱3,999,000"
                          
 							  />
-			</Grid>		</Grid>
+					<views:CardCardsView
+							Grid.Column="3"
+							CardImageSource="avares://LoanCalculator/Assets/Images/Civic.png"
+							   CardTitle="Honda Civic Type R"
+							   CardPrice="₱3,870,000"
+                         
+							  />
+
+				</Grid>		
+		</Grid>
 	</Grid>
 	
 		
