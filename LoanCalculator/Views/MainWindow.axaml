@@ -1,4 +1,4 @@
-<Window xmlns="https://github.com/avaloniaui"
+﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:LoanCalculator.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -31,10 +31,27 @@
 
 
 			<Grid  ColumnDefinitions="auto,auto,auto" Grid.Row="2" HorizontalAlignment="Center">
-				<views:CardCardsView/>
-				
-			</Grid>
-		</Grid>
+				<views:CardCardsView
+						CardImageSource="avares://LoanCalculator/Assets/Images/SubaroR.png"
+                           CardTitle="Subaru BRZ"
+                           CardPrice="₱2,500,000" 
+                         
+							  />
+				<views:CardCardsView
+					Grid.Column="1"
+						CardImageSource="avares://LoanCalculator/Assets/Images/Mustang.webp"
+                           CardTitle="Ford Mustang"
+                           CardPrice="₱3,999,000"
+                         
+							  />
+				<views:CardCardsView
+						Grid.Column="2"
+						CardImageSource="avares://LoanCalculator/Assets/Images/Civic.png"
+                           CardTitle="Honda Civic Type R"
+                           CardPrice="₱3,870,000"
+                         
+							  />
+			</Grid>		</Grid>
 	</Grid>
 	
 		
