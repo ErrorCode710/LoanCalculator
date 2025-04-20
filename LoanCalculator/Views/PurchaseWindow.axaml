@@ -1,0 +1,110 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LoanCalculator.Views.PurchaseWindow"
+        Title="PurchaseWindow">
+	
+
+	<Grid>
+		<Grid  RowDefinitions="auto,auto">
+
+			<Grid Height="40" Width="700" Grid.Row="0" ColumnDefinitions="*,auto"  >
+				<TextBlock  Grid.Column="0" FontFamily="{StaticResource SfProB}" Margin="0,10,0,0" FontSize="21">Car Deals</TextBlock>
+				<TextBlock  Grid.Column="1" FontFamily="{StaticResource SfProBR}" Margin="0,10,0,0" FontSize="14">Promo</TextBlock>
+
+
+			</Grid>
+
+			<Grid  Grid.Row="1" RowDefinitions="auto,auto, auto" >
+				<Border Grid.Row="0" Height="1" Background="#e1e1e1"></Border>
+				<TextBlock Grid.Row="1"  Grid.Column="1" FontFamily="{StaticResource SfProB}" FontSize="30" Margin="0,30,0,10" HorizontalAlignment="Center" > Loan Calculator</TextBlock>
+
+				<Grid Grid.Row="2">
+					<Border Background="#f2f2f2" Width="700" Height="300" CornerRadius="20">
+						<Grid ColumnDefinitions="*,*">
+							<Grid Grid.Column="0" RowDefinitions="*,*,*,*" Background="" Margin="20">
+								<Grid Grid.Row="0" RowDefinitions="4*,5*" >
+									<Grid Grid.Row="0" ColumnDefinitions="*,*">
+										<TextBlock Grid.Column="0" FontFamily="{StaticResource SfProB}" Margin="0,10,0,0" FontSize="16">Loan Amount</TextBlock>
+										<TextBlock Grid.Column="1" FontFamily="{StaticResource SfProB}" Margin="0,10,0,0" FontSize="16" HorizontalAlignment="Right" Text="₱3,999,000"></TextBlock>
+									</Grid>
+									<Grid Grid.Row="1">
+										<Slider x:Name="slider"   Minimum="1000000" Maximum="10000000" Value="3999000"  IsEnabled="False"/>
+									</Grid>
+								</Grid>
+								<Grid Grid.Row="1"  RowDefinitions="4*,5*" >
+									<Grid Grid.Row="0" ColumnDefinitions="*,*" >
+										<TextBlock Grid.Column="0" FontFamily="{StaticResource SfProB}" Margin="0,10,0,0" FontSize="16">Down Payment</TextBlock>
+										<TextBlock Grid.Column="1" FontFamily="{StaticResource SfProB}" Margin="0,10,0,0" FontSize="16" HorizontalAlignment="Right" Text="{Binding #slider1.Value, StringFormat='{}{0}%'}" ></TextBlock>
+									</Grid>
+									<Grid Grid.Row="1"   >
+										<Slider x:Name="slider1"   Minimum="10" Maximum="80"  TickPlacement="None"   TickFrequency="10" IsSnapToTickEnabled="True" Padding=""/>
+									</Grid>
+									
+								</Grid>
+								<Grid Grid.Row="2"   RowDefinitions="4*,5*" >
+									<Grid Grid.Row="0" ColumnDefinitions="*,*" >
+										<TextBlock Grid.Column="0" FontFamily="{StaticResource SfProB}" Margin="0,10,0,0" FontSize="16">Payment Terms</TextBlock>
+										<TextBlock Grid.Column="1" FontFamily="{StaticResource SfProB}" Margin="0,10,0,0" FontSize="16" HorizontalAlignment="Right" Text="{Binding #slider2.Value, StringFormat='{}{0} Months'}" x:Name="termText" ></TextBlock>
+									</Grid>
+									<Grid Grid.Row="1"  >
+										<Slider x:Name="slider2"   Minimum="12" Maximum="84"  TickPlacement="None"   TickFrequency="12" IsSnapToTickEnabled="True"/>
+									</Grid>
+								</Grid>
+								<Grid Grid.Row="3">
+									<Button Content="Calculate" HorizontalContentAlignment="Center"
+			VerticalContentAlignment="Center" HorizontalAlignment="Center" FontFamily="{DynamicResource SfProB}" Foreground="White" Background="#007AFF" Padding="15"  FontSize="18"  />
+								</Grid>
+								
+							</Grid>
+							<Grid Grid.Column="1"  RowDefinitions="auto,*"  Margin="20" >
+								<TextBlock Grid.Row="0" FontFamily="{DynamicResource SfProB}" FontSize="18" >Your Loan Summary</TextBlock>
+
+								<Grid Grid.Row="1"  RowDefinitions="*,*,*,*">
+									<Grid Grid.Row="0" Margin="0 0 0 5">
+										<Border BorderBrush="#e0e0e0" BorderThickness="1" CornerRadius="10" Padding="10"  >
+											<StackPanel>
+												<TextBlock Text="₱3,999,000" FontSize="22" FontFamily="{DynamicResource SfProB}" Foreground="#007AFF"/>
+												<TextBlock Text="Car Price" FontFamily="{DynamicResource SfProB}"/>
+											</StackPanel>
+										</Border>
+									</Grid>
+									<Grid Grid.Row="1" Margin="0 0 0 5" >
+										<Border BorderBrush="#e0e0e0" BorderThickness="1" CornerRadius="10" Padding="10"  >
+											<StackPanel>
+												<TextBlock Text="₱3,999,000" FontSize="22" FontFamily="{DynamicResource SfProB}" Foreground="#007AFF"/>
+												<TextBlock Text="Down Payment" FontFamily="{DynamicResource SfProB}"/>
+											</StackPanel>
+										</Border>
+									</Grid>
+									<Grid Grid.Row="2" Margin="0 0 0 5">
+										<Border BorderBrush="#e0e0e0" BorderThickness="1" CornerRadius="10" Padding="10"  >
+											<StackPanel>
+												<TextBlock Text="₱3,999,000" FontSize="22" FontFamily="{DynamicResource SfProB}" Foreground="#007AFF"/>
+												<TextBlock Text="Amount Financed" FontFamily="{DynamicResource SfProB}"/>
+											</StackPanel>
+										</Border>
+									</Grid>
+									<Grid Grid.Row="3" Margin="0 0 0 5">
+										<Border BorderBrush="#e0e0e0" BorderThickness="1" CornerRadius="10" Padding="10"  >
+											<StackPanel>
+												<TextBlock Text="₱3,999,000" FontSize="22" FontFamily="{DynamicResource SfProB}" Foreground="#007AFF"/>
+												<TextBlock Text="Monthly Amortization" FontFamily="{DynamicResource SfProB}"/>
+											</StackPanel>
+										</Border>
+									</Grid>
+								</Grid>
+							</Grid>
+							
+						</Grid>
+					</Border>
+				</Grid>
+				</Grid>
+		</Grid>
+
+
+	</Grid>
+
+</Window>
