@@ -83,7 +83,7 @@
 							<views:CardCardsView Grid.Column="2"
                                                CardImageSource="avares://LoanCalculator/Assets/Images/Supra.png"
                                                CardTitle="Toyota Supra"
-                                               CardPrice="₱₱5,552,000"/>
+                                               CardPrice="₱5,552,000"/>
 						</Grid>
 						
 					</Carousel>

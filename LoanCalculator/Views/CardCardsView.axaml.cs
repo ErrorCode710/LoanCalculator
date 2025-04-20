@@ -39,7 +39,9 @@
         private void onPurchase(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var purchaseWindow = new PurchaseWindow();
+        purchaseWindow.CardPrice = CardPrice;
             purchaseWindow.Show();
+
         }
 
     }
