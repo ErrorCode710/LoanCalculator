@@ -11,8 +11,7 @@
         Title="LoanCalculator">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+       
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 	<Grid>
@@ -25,27 +24,72 @@
 			
 		</Grid>
 		
-		<Grid  Grid.Row="1" RowDefinitions="auto,auto, auto">
+		<Grid  Grid.Row="1" RowDefinitions="auto,auto, auto" >
 			<Border Grid.Row="0" Height="1" Background="#e1e1e1"></Border>
 			<TextBlock Grid.Row="1"  Grid.Column="1" FontFamily="{StaticResource SfProB}" FontSize="30" Margin="0,30,0,0" HorizontalAlignment="Center" > Featured Deals</TextBlock>
 
 			
-				<Grid  ColumnDefinitions="auto,auto,auto,auto,auto" Grid.Row="2" HorizontalAlignment="Center">
+				<Grid  ColumnDefinitions="auto,*,auto" Grid.Row="2" HorizontalAlignment="Center" Width="800"  >
 					<Button Grid.Column="0"
-							Classes="IconButtonStyle">
+							Classes="IconButtonStyle"
+							Click="Previous"
+						>
+						
 						<Path Data="{StaticResource chevron_up_regular}"
 					  Fill="Black"
 					  Width="24"
 					  Height="24"
 					  Stretch="Uniform">
 							<Path.RenderTransform>
-								<RotateTransform Angle="270" CenterX="-10" CenterY="5" />
+								<RotateTransform Angle="270" />
 							</Path.RenderTransform>
 						</Path>
 					</Button>
 
-					<Button Grid.Column="4"
-							Classes="IconButtonStyle">
+					
+					<Carousel Name="slides"  Width="700"
+							   Grid.Column="1"
+              HorizontalAlignment="Stretch">
+						<Carousel.PageTransition >
+							<CompositePageTransition>
+								<PageSlide Duration="0:00:00.800" Orientation="Horizontal" />
+							</CompositePageTransition>
+						</Carousel.PageTransition>
+						<Grid ColumnDefinitions="*,*,*"  HorizontalAlignment="Center" VerticalAlignment="Center"  >
+							<views:CardCardsView Grid.Column="0" 
+                                               CardImageSource="avares://LoanCalculator/Assets/Images/SubaroR.png"
+                                               CardTitle="Subaru BRZ"
+                                               CardPrice="₱2,500,000"/>
+							<views:CardCardsView Grid.Column="1"
+                                               CardImageSource="avares://LoanCalculator/Assets/Images/Mustang.webp"
+                                               CardTitle="Ford Mustang"
+                                               CardPrice="₱3,999,000"/>
+							<views:CardCardsView Grid.Column="2"
+                                               CardImageSource="avares://LoanCalculator/Assets/Images/Civic.png"
+                                               CardTitle="Honda Civic Type R"
+                                               CardPrice="₱3,870,000"/>
+						</Grid>
+
+						
+						<Grid ColumnDefinitions="*,*,*"   VerticalAlignment="Center" >
+							<views:CardCardsView Grid.Column="0"
+                                               CardImageSource="avares://LoanCalculator/Assets/Images/chevCamaro.png"
+                                               CardTitle="Chevrolet Camaro"
+                                               CardPrice="₱4,266,888.00"/>
+							<views:CardCardsView Grid.Column="1"
+                                               CardImageSource="avares://LoanCalculator/Assets/Images/Mazda.png"
+                                               CardTitle="Mazda MX-5"
+                                               CardPrice="₱2,230,000"/>
+							<views:CardCardsView Grid.Column="2"
+                                               CardImageSource="avares://LoanCalculator/Assets/Images/Supra.png"
+                                               CardTitle="Toyota Supra"
+                                               CardPrice="₱₱5,552,000"/>
+						</Grid>
+						
+					</Carousel>
+					<Button Grid.Column="2"
+												Classes="IconButtonStyle"
+												Click="Next">
 						<Path Data="{StaticResource chevron_up_regular}"
 					  Fill="Black"
 					  Width="24"
@@ -56,28 +100,6 @@
 							</Path.RenderTransform>
 						</Path>
 					</Button>
-					<views:CardCardsView
-							Grid.Column="1"
-							CardImageSource="avares://LoanCalculator/Assets/Images/SubaroR.png"
-							   CardTitle="Subaru BRZ"
-							   CardPrice="₱2,500,000"
-                         
-							  />
-					<views:CardCardsView
-						Grid.Column="2"
-							CardImageSource="avares://LoanCalculator/Assets/Images/Mustang.webp"
-							   CardTitle="Ford Mustang"
-							   CardPrice="₱3,999,000"
-                         
-							  />
-					<views:CardCardsView
-							Grid.Column="3"
-							CardImageSource="avares://LoanCalculator/Assets/Images/Civic.png"
-							   CardTitle="Honda Civic Type R"
-							   CardPrice="₱3,870,000"
-                         
-							  />
-
 				</Grid>		
 		</Grid>
 	</Grid>
